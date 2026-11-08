@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@theme {
+  --color-fresh-50: #f0faf3;
+  --color-fresh-100: #d9f2e0;
+  --color-fresh-500: #2f9e5b;
+  --color-fresh-600: #238048;
+  --color-fresh-700: #1c653a;
+  --color-fresh-900: #11391f;
+  --color-citrus-400: #ffb23f;
+  --color-citrus-500: #f59a0c;
+  --color-crema: #fbf8f1;
+  --font-sans: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-crema text-stone-800 antialiased;
+  }
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-fresh-600;
+  }
+}
+
+/* Componentes reutilizables de estilo (botones e inputs) */
+@utility btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition
+         disabled:cursor-not-allowed disabled:opacity-50;
+}
+
+@layer components {
+  .btn-primary {
+    @apply btn bg-fresh-600 text-white shadow-sm hover:bg-fresh-700;
+  }
+  .btn-secondary {
+    @apply btn border border-stone-300 bg-white text-stone-700 hover:bg-stone-100;
+  }
+  .btn-danger {
+    @apply btn border border-red-200 bg-red-50 text-red-700 hover:bg-red-100;
+  }
+  .input {
+    @apply w-full rounded-xl border border-stone-300 bg-white px-3.5 py-2.5 text-sm shadow-sm
+           placeholder:text-stone-400 focus:border-fresh-500 focus:outline-none focus:ring-2 focus:ring-fresh-500/30;
+  }
+  .card {
+    @apply rounded-2xl border border-stone-200 bg-white shadow-sm;
+  }
+}
