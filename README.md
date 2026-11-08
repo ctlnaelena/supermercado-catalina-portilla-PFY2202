@@ -1,4 +1,4 @@
-# 🛒 Súper Fresco · Gestión de inventario de supermercado
+# 🛒 Goodies · Gestión de inventario de supermercado
 
 Proyecto de **Desarrollo Frontend II**
 
